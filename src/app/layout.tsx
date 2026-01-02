@@ -33,6 +33,14 @@ export const metadata: Metadata = {
     title: 'Hex Studio - AI & Software Development Agency',
     description: 'Empowering businesses with cutting-edge AI solutions and software development.',
     type: 'website',
+    images: [
+      {
+        url: '/app_icon_512.svg',
+        width: 512,
+        height: 512,
+        alt: 'Hex Studio',
+      }
+    ],
   }
 }
 
