@@ -1,0 +1,31 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradApp" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0072ff"></stop>
+      <stop offset="100%" style="stop-color:#00c6ff"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="#0b1220"></rect>
+
+  <!-- Hexagon -->
+  <polygon points="256,90 370,158 370,354 256,422 142,354 142,158" fill="none" stroke="url(#gradApp)" stroke-width="14"></polygon>
+
+  <!-- AI Nodes -->
+  <circle cx="230" cy="210" r="10" fill="#00c6ff"></circle>
+  <circle cx="282" cy="210" r="10" fill="#00c6ff"></circle>
+  <circle cx="256" cy="256" r="10" fill="#00c6ff"></circle>
+  <circle cx="230" cy="302" r="10" fill="#00c6ff"></circle>
+  <circle cx="282" cy="302" r="10" fill="#00c6ff"></circle>
+
+  <!-- Connections -->
+  <line x1="230" y1="210" x2="256" y2="256" stroke="#00c6ff" stroke-width="6"></line>
+  <line x1="282" y1="210" x2="256" y2="256" stroke="#00c6ff" stroke-width="6"></line>
+  <line x1="256" y1="256" x2="230" y2="302" stroke="#00c6ff" stroke-width="6"></line>
+  <line x1="256" y1="256" x2="282" y2="302" stroke="#00c6ff" stroke-width="6"></line>
+
+  <!-- AI Label -->
+  <rect x="220" y="330" width="72" height="38" rx="10" fill="url(#gradApp)"></rect>
+  <text x="256" y="357" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="26" font-weight="800" fill="#0b1220">AI</text>
+</svg>

@@ -1,0 +1,27 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradLightApp" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0072ff"></stop>
+      <stop offset="100%" style="stop-color:#00c6ff"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="#ffffff"></rect>
+
+  <!-- Soft Shadow -->
+  <rect x="32" y="32" width="448" height="448" rx="80" fill="none" stroke="#e5e7eb" stroke-width="4"></rect>
+
+  <!-- Hexagon -->
+  <polygon points="256,90 370,158 370,354 256,422 142,354 142,158" fill="none" stroke="url(#gradLightApp)" stroke-width="14"></polygon>
+
+  <!-- AI Nodes -->
+  <circle cx="230" cy="210" r="10" fill="#0072ff"></circle>
+  <circle cx="282" cy="210" r="10" fill="#0072ff"></circle>
+  <circle cx="256" cy="256" r="10" fill="#0072ff"></circle>
+  <circle cx="230" cy="302" r="10" fill="#0072ff"></circle>
+  <circle cx="282" cy="302" r="10" fill="#0072ff"></circle>
+
+  <!-- Connections -->
+  <line x1="230" y1="210" x2="256" y2="256" stroke="#0072ff" stroke-width="6"></line>
+  </svg>
