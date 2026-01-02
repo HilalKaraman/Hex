@@ -15,7 +15,13 @@ export const translations = {
             titleLine2: 'Code the future.',
             subtitle: 'We provide cutting-edge software development and artificial intelligence consulting to elevate your business. From custom web apps to smart automation, we build scalable solutions.',
             primaryBtn: 'Get AI Consultation',
-            secondaryBtn: 'View Our Works'
+            secondaryBtn: 'View Our Works',
+            interactive: {
+                title: 'Interactive 3D Showroom',
+                headline: 'Bring Your Products to Life',
+                desc: 'Transform your e-commerce with photorealistic 3D models. Allow customers to examine products from every angle, boosting confidence and conversion rates.',
+                badge: 'Try to Rotate 🖱️'
+            }
         },
         bento: {
             card1: {
@@ -276,7 +282,13 @@ export const translations = {
             titleLine2: 'Geleceği kodlayın.',
             subtitle: 'İşletmenizi bir üst seviyeye taşımak için uçtan uca yazılım geliştirme ve yapay zeka danışmanlığı sunuyoruz. Özel web uygulamalarından akıllı otomasyonlara kadar ölçeklenebilir çözümler üretiyoruz.',
             primaryBtn: 'Yapay Zeka Danışmanlığı Al',
-            secondaryBtn: 'Projelerimizi Gör'
+            secondaryBtn: 'Projelerimizi Gör',
+            interactive: {
+                title: 'İnteraktif 3D Showroom',
+                headline: 'Ürünlerinize Hayat Verin',
+                desc: 'E-ticaretinizi fotorealistik 3D modellerle dönüştürün. Müşterilerin ürünleri her açıdan incelemesini sağlayarak güveni ve satışları artırın.',
+                badge: 'Döndürmeyi Dene 🖱️'
+            }
         },
         bento: {
             card1: {

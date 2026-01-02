@@ -1,9 +1,14 @@
 'use client'
 
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import { useLanguage } from './components/LanguageContext'
+
+// Dynamically import 3D components with no SSR
+const Hero3D = dynamic(() => import('./components/Hero3D'), { ssr: false })
+const InteractiveShowcase = dynamic(() => import('./components/InteractiveShowcase'), { ssr: false })
 
 export default function Home() {
   const { t } = useLanguage()
@@ -14,17 +19,32 @@ export default function Home() {
         <Navbar />
 
         {/* Hero Section */}
-        <section className="hero-section">
-          <h1 className="hero-title">
+        <section className="hero-section" style={{ position: 'relative', overflow: 'hidden' }}>
+          {/* Hero3D - Positioned to the right */}
+          <div style={{
+            position: 'absolute',
+            top: '50%',
+            right: '-5%',
+            transform: 'translateY(-50%)',
+            width: '50%',
+            height: '120%',
+            zIndex: 0,
+            opacity: 0.6,
+            pointerEvents: 'none'
+          }}>
+            <Hero3D />
+          </div>
+
+          <h1 className="hero-title" style={{ position: 'relative', zIndex: 1 }}>
             {t.hero.titlePlain}<span className="serif-italic">{t.hero.titleItalic}</span>{t.hero.titleSuffix}<br />
             {t.hero.titleLine2}
           </h1>
 
-          <p className="hero-subtitle">
+          <p className="hero-subtitle" style={{ position: 'relative', zIndex: 1 }}>
             {t.hero.subtitle}
           </p>
 
-          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap', position: 'relative', zIndex: 1 }}>
             <Link href="/contact">
               <button className="btn-primary">
                 {t.hero.primaryBtn}
@@ -36,11 +56,75 @@ export default function Home() {
                 {t.hero.secondaryBtn}
               </button>
             </Link>
+            <Link href="/explore">
+              <button className="btn-secondary" style={{ background: 'linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%)', color: 'white', border: 'none' }}>
+                🚗 {t.nav.toggle === 'EN' ? 'Keşfet' : 'Explore'}
+              </button>
+            </Link>
           </div>
         </section>
 
         {/* Bento Grid Features */}
         <section className="bento-grid">
+
+          {/* [NEW] Interactive 3D Showroom - Responsive Split Cards with Connector */}
+          <div className="showcase-container" style={{
+            gridColumn: '1 / -1',
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '0',
+            alignItems: 'stretch',
+            marginBottom: '24px',
+            minHeight: '420px',
+            height: 'auto'
+          }}>
+            {/* Text Card */}
+            <div className="bento-card" style={{ flex: '1 1 280px', minWidth: '280px', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '32px', borderRadius: '24px 0 0 24px', marginRight: '-1px', height: 'auto', minHeight: '300px' }}>
+              <span style={{ color: '#8b5cf6', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.08em', marginBottom: '12px', textTransform: 'uppercase' }}>
+                {t.hero.interactive?.title}
+              </span>
+              <h2 className="card-title" style={{ fontSize: '1.8rem', marginBottom: '16px', lineHeight: 1.3 }}>
+                {t.hero.interactive?.headline}
+              </h2>
+              <p className="card-desc" style={{ fontSize: '1rem', opacity: 0.85, lineHeight: 1.6 }}>
+                {t.hero.interactive?.desc}
+              </p>
+            </div>
+
+            {/* Animated Connector */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '60px',
+              background: 'linear-gradient(90deg, rgba(139,92,246,0.1) 0%, rgba(139,92,246,0.3) 50%, rgba(139,92,246,0.1) 100%)',
+              position: 'relative',
+              zIndex: 5
+            }}>
+              {/* Animated Arrow */}
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                animation: 'pulse 2s ease-in-out infinite'
+              }}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+              {/* Animated Dots */}
+              <div style={{ position: 'absolute', top: '50%', left: '10px', transform: 'translateY(-50%)', display: 'flex', gap: '6px' }}>
+                <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#8b5cf6', animation: 'dotPulse 1.5s ease-in-out infinite', animationDelay: '0s' }}></span>
+                <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#8b5cf6', animation: 'dotPulse 1.5s ease-in-out infinite', animationDelay: '0.3s' }}></span>
+                <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#8b5cf6', animation: 'dotPulse 1.5s ease-in-out infinite', animationDelay: '0.6s' }}></span>
+              </div>
+            </div>
+
+            {/* 3D Model Card */}
+            <div className="bento-card" style={{ flex: '1.5 1 350px', minWidth: '300px', height: '420px', padding: 0, overflow: 'hidden', position: 'relative', borderRadius: '0 24px 24px 0', marginLeft: '-1px' }}>
+              <InteractiveShowcase />
+            </div>
+          </div>
+
           <div className="bento-card card-span-2">
             <h3 className="card-title">{t.bento.card1.title}</h3>
             <p className="card-desc">{t.bento.card1.desc}</p>
@@ -58,6 +142,8 @@ export default function Home() {
               <span style={{ background: '#f3f4f6', padding: '6px 12px', borderRadius: '100px', fontSize: '0.85rem' }}>Node.js</span>
             </div>
           </div>
+
+
 
           <div className="bento-card card-span-2">
             <h3 className="card-title">{t.bento.card4.title}</h3>

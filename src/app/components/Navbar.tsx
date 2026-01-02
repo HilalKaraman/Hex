@@ -15,9 +15,10 @@ export default function Navbar() {
                 <Image
                     src="/logo_ai_hex.svg"
                     alt="Hex Studio"
-                    width={180}
-                    height={40}
+                    width={0}
+                    height={0}
                     priority
+                    sizes="100vw"
                     style={{ height: '40px', width: 'auto' }}
                 />
             </Link>

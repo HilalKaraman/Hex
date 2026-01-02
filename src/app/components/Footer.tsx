@@ -17,8 +17,9 @@ export default function Footer() {
                             <Image
                                 src="/logo_ai_hex.svg"
                                 alt="Hex Studio"
-                                width={160}
-                                height={35}
+                                width={0}
+                                height={0}
+                                sizes="100vw"
                                 style={{ height: '35px', width: 'auto', marginBottom: '16px' }}
                             />
                         </Link>
