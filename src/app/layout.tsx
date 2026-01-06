@@ -27,8 +27,21 @@ export const metadata: Metadata = {
   description: 'Empowering businesses with cutting-edge AI solutions, web development, and digital transformation. From custom AI agents to modern web applications.',
   keywords: 'AI, software development, web design, mobile apps, digital agency, Istanbul',
   icons: {
-    icon: '/hex_studio_favicon.svg',
-    apple: '/app_icon_512.svg',
+    icon: [
+      { url: '/favicon/favicon.ico', sizes: 'any' },
+      { url: '/favicon/favicon-32x32.png', type: 'image/png' },
+      { url: '/favicon/favicon-16x16.png', type: 'image/png' },
+    ],
+    apple: {
+      url: '/favicon/apple-touch-icon.png',
+      sizes: '180x180',
+    },
+    other: [
+      {
+        rel: 'manifest',
+        url: '/favicon/site.webmanifest',
+      },
+    ]
   },
   openGraph: {
     title: 'Hex Studio - AI & Software Development Agency',
