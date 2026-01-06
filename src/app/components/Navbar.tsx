@@ -27,6 +27,7 @@ export default function Navbar() {
             <div className="nav-links desktop-nav">
                 <Link href="/services" className="nav-link">{t.nav.services}</Link>
                 <Link href="/projects" className="nav-link">{t.nav.projects}</Link>
+                <Link href="/blog" className="nav-link">{t.nav.blog ?? 'Blog'}</Link>
                 <Link href="/about" className="nav-link">{t.nav.about}</Link>
                 <Link href="/contact" className="nav-link">{t.nav.contact}</Link>
             </div>
@@ -58,6 +59,9 @@ export default function Navbar() {
                 </Link>
                 <Link href="/projects" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
                     {t.nav.projects}
+                </Link>
+                <Link href="/blog" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+                    {t.nav.blog ?? 'Blog'}
                 </Link>
                 <Link href="/about" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
                     {t.nav.about}

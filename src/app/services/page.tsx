@@ -1,48 +1,14 @@
-'use client'
+import { Metadata } from 'next'
+import ServicesContent from './ServicesContent'
 
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import { useLanguage } from '../components/LanguageContext'
+export const metadata: Metadata = {
+    title: 'AI & Software Services - Hex Studio | Hizmetlerimiz',
+    description: 'Custom AI development, web apps, mobile solutions, and digital transformation services. | Özel yapay zeka geliştirme, web uygulamaları ve dijital dönüşüm hizmetleri.',
+    alternates: {
+        canonical: 'https://www.hexstudio.com.tr/services',
+    }
+}
 
 export default function ServicesPage() {
-    const { t } = useLanguage()
-
-    return (
-        <main>
-            <div className="container">
-                <Navbar />
-
-                {/* Page Hero */}
-                <section className="page-hero">
-                    <h1 className="page-hero-title">{t.servicesPage.hero.title}</h1>
-                    <p className="page-hero-subtitle">{t.servicesPage.hero.subtitle}</p>
-                </section>
-
-                {/* Service Details */}
-                <section className="section" style={{ paddingTop: '40px' }}>
-                    {t.servicesPage.items.map((service, index) => (
-                        <div className="service-detail-card" key={index}>
-                            <div className="service-detail-header">
-                                <span className="service-detail-icon">{service.icon}</span>
-                                <div>
-                                    <h2 className="service-detail-title">{service.title}</h2>
-                                    <p className="service-detail-desc">{service.desc}</p>
-                                </div>
-                            </div>
-                            <div className="service-features">
-                                {service.features.map((feature, fIndex) => (
-                                    <div className="feature-item" key={fIndex}>
-                                        <span className="feature-check">✓</span>
-                                        <span>{feature}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
-                </section>
-            </div>
-
-            <Footer />
-        </main>
-    )
+    return <ServicesContent />
 }

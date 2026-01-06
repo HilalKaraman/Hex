@@ -4,6 +4,7 @@ export const translations = {
             services: 'Services',
             expertise: 'Expertise',
             projects: 'Projects',
+            blog: 'Blog',
             about: 'About',
             contact: 'Contact',
             toggle: 'TR'
@@ -271,6 +272,7 @@ export const translations = {
             services: 'Hizmetler',
             expertise: 'Uzmanlıklar',
             projects: 'Projeler',
+            blog: 'Blog',
             about: 'Hakkımızda',
             contact: 'İletişim',
             toggle: 'EN'
